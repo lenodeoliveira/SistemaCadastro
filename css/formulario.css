@@ -1,0 +1,14 @@
+body{background-color: #4db6ac;}
+.card-panel {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    }
+    h1{
+      font-size: 40px;
+      margin-top: 10px;     
+    }
+    i{
+        margin-left: -50px; 
+    }

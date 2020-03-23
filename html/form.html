@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro/Edicao</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!----materialize css--->
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+
+
+
+<body>
+
+    <nav class="cyan darken-2">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo"><../..></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="usuario_form.php">Cadastro</a></li>
+            <li><a href="usuario_lista.php">Listagem</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+    <div class="card-panel center  teal lighten-5" style="width: 25rem">
+    
+    <h1 class="center teal-text mx-auto mt-4">Cadastro</h1>
+    
+    <form  class="col s12" method="post" action="usuario_form.php?action=save">
+    <div class="input-field col s12">
+      <input name="id" readonly="1" placeholder="id" type="hidden" value="{id}"/>
+    </div>  
+    
+    <div class="input-field col s12">
+    <i class="material-icons">face<input name="nome" placeholder=" Nome" type="text" value="{nome}" class="validate" required></i>
+    </div>
+    
+    <div class="input-field col s12">
+    <i class="material-icons">email<input name="email" placeholder=" E-mail" type="text" value="{email}" class="validate" required></i>
+    </div>
+    
+    <div class="input-field col s12">
+    <i class="material-icons">lock<input name="senha" placeholder=" Senha" type="text" value="{senha}" class="validate" required></i>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    
+    </form>
+    </div>
+ 
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> 
+<script src="js/materialize.js"></script>
+
+    
+</body>
+</html>
