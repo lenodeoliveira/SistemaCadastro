@@ -5,7 +5,12 @@ spl_autoload_register(function($class) {
     }
 });
 
-$classe = $_REQUEST['class'];
+if(empty($classe = $_REQUEST['class']))
+{
+
+    header ("Location:index.php?class=UsuarioForm");
+
+}
 $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : null;
 
 if (class_exists($classe))

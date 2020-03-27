@@ -18,17 +18,14 @@ class Usuario
         }
 
         return self::$conn;
-
     }
 
     public static function save($usuario)
      {
-
         $conn = self::getConnection();
         
         if(empty($usuario['id']))
         {
-
             $result = $conn->query("SELECT max(id) as next FROM tb_usuario");
             $row = $result->fetch();
             $usuario['id'] = (int) $row['next'] +1;
@@ -50,26 +47,20 @@ class Usuario
                           ':nome'      => $usuario['nome'],
                           ':email'     => $usuario['email'],
                           ':senha'     => $usuario['senha'],
-                          ]);
-
-                                  
+                          ]);                   
     }
-
 
     public static function find($id)
     {
-
         $conn = self::getConnection();
         
         $result = $conn->prepare("SELECT * FROM tb_usuario WHERE id=:id");
         $result->execute([':id'=>$id]);
         return $result->fetch();
-
     }
 
     public static function delete($id)
     {
-
         $conn = self::getConnection();
         
         $result = $conn->prepare("DELETE FROM tb_usuario WHERE id=:id");
@@ -84,7 +75,5 @@ class Usuario
     }
 
 }
-
-
 
 ?>

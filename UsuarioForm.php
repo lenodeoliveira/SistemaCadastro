@@ -1,10 +1,8 @@
 <?php
-
 require_once 'classes/Usuario.php';
 
 class UsuarioForm 
 {
-
     private $html;
     private $data;
 
@@ -15,25 +13,20 @@ class UsuarioForm
                        'nome' => null, 
                        'email' => null,
                        'senha' => null];
-
     }
 
     public function edit($param)
     {
         try
         {
-
             $id = (int)$param['id'];
             $usuario = Usuario::find($id);      
             $this->data = $usuario;
-
         }
         catch(Exception $e)
         {
             print $e->getMessage();
-
         }
-
     }
 
     public function save($param)
@@ -42,15 +35,12 @@ class UsuarioForm
         {
             Usuario::save($param);
             $this->data = $param;
-            print "Pessoa salva com sucesso!";
-
+            header ("Location:index.php?class=UsuarioForm");
         }
         catch(Exception $e)
         {
             print $e->getMessage();
-
         }
-
     }
 
     public function show()
@@ -61,10 +51,7 @@ class UsuarioForm
         $this->html = str_replace('{senha}', $this->data['senha'], $this->html);
 
         print $this->html;
-
     }
-
-
 }
 
 
